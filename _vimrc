@@ -10,6 +10,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -76,6 +77,9 @@ set wrapscan
 
 " Clear highlighted search
 nnoremap <silent> <leader>/ :nohlsearch<cr>
+
+" nerd tree
+map <leader>n :NERDTreeToggle<cr>
 
 " ctags
 set tags=./tags;,tags;
