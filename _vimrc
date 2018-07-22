@@ -13,7 +13,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " General stuff
 set visualbell
@@ -43,7 +42,6 @@ set laststatus=2
 set showtabline=1
 
 set virtualedit=onemore
-
 syntax on
 filetype on
 filetype plugin on
