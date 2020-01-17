@@ -1,7 +1,6 @@
 if &compatible
     set nocompatible
 endif
-
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
 call vundle#begin()
@@ -11,6 +10,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -81,3 +81,16 @@ map <leader>n :NERDTreeToggle<cr>
 
 " ctags
 set tags=./tags;,tags;
+
+" ack
+nnoremap <Leader>a :Ack!<Space>
+
+" trailing white spaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" linter
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_quiet_messages = {"regex": 'no-name-in-module\|import-error'}
+let g:syntastic_python_pylint_args = '--rcfile=/Users/annakovale/.pylintrc'
+let g:syntastic_python_checkers = ['flake8', 'pylint']
